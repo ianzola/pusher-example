@@ -13,6 +13,6 @@ class HomeController < ApplicationController
      response = Pusher[params[:channel_name]].authenticate(params[:socket_id])
      puts "response: #{response}"
      #render :json => response
-     render :text => params[:callback] + "(" + response.to_json + ")"
+     render :text => "#{params[:callback]} (#{response.to_json})"
   end
 end

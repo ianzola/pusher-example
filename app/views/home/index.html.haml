@@ -1,8 +1,8 @@
 = javascript_include_tag "http://js.pusher.com/1.12/pusher.min.js"
 
 :javascript
-    //Pusher.channel_auth_transport = 'jsonp';
-    //Pusher.channel_auth_endpoint = 'http://localhost:3000/home/auth';
+    Pusher.channel_auth_transport = 'jsonp';
+    Pusher.channel_auth_endpoint = 'http://localhost:3000/home/auth';
 
     // Enable pusher logging - don't include this in production
     Pusher.log = function(message) {
