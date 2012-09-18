@@ -1,4 +1,23 @@
-%h3 Home
-- @users.each do |user|
-  %p
-    User: #{link_to user.name, user}
+= javascript_include_tag "http://js.pusher.com/1.12/pusher.min.js"
+
+:javascript
+    //Pusher.channel_auth_transport = 'jsonp';
+    //Pusher.channel_auth_endpoint = 'http://localhost:3000/home/auth';
+
+    // Enable pusher logging - don't include this in production
+    Pusher.log = function(message) {
+      if (window.console && window.console.log) window.console.log(message);
+    };
+
+    // Flash fallback logging - don't include this in production
+    WEB_SOCKET_DEBUG = true;
+
+    var pusher = new Pusher('4ba83e95389432c302dd');
+
+    var channel = pusher.subscribe('private-test01');
+    //debugger
+    console.log(pusher);
+
+    channel.bind('my_event', function(data) {
+      alert(data);
+    });
