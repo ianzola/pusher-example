@@ -20,4 +20,5 @@
 
     channel.bind('my_event', function(data) {
       alert(data);
+      channel.trigger('client-event', {data: 'testing triggers'});
     });
