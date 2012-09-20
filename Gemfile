@@ -12,8 +12,7 @@ end
 gem 'pusher'
 gem 'eventmachine'
 gem 'em-http-request'
-gem 'sinatra'
-
+gem 'heroku'
 
 gem 'jquery-rails'
 gem "thin", ">= 1.4.1"
