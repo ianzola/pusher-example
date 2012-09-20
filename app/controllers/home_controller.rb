@@ -4,6 +4,10 @@ class HomeController < ApplicationController
     @users = User.all
   end
 
+  def main
+    @users = User.all
+  end
+
   def auth_get
     render :json => {:name => "auth_home"}
   end

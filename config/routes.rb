@@ -4,6 +4,7 @@ PusherExample::Application.routes.draw do
     collection do
       get 'auth'
       get 'auth_get'
+      get 'main'
     end
   end
 
@@ -14,10 +15,10 @@ PusherExample::Application.routes.draw do
   end
 
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'home#main'
   end
 
-  root :to => "home#index"
+  root :to => "home#main"
 
   devise_for :users
 
